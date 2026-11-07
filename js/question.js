@@ -47,13 +47,15 @@ export function revealHtml(q, state) {
 /**
  * mountQuestion(el, opts) -> controller
  * opts: q, state, athletes (answer pool), label, hostDriven, onChange(state), onDone(state)
- * Self-timed (Daily/Practice): reveals a clue every PLAY.clueSeconds and ends after
- * PLAY.finalSeconds on the last clue. Host-driven: call setShown(n) and end().
+ * Daily/Practice: the player taps "Next clue". If PLAY.clueSeconds is set, clues also come
+ * on a timer and the answer shows PLAY.finalSeconds after the last clue.
+ * Host-driven: call setShown(n) and end().
  */
 export function mountQuestion(el, opts) {
   const { q, state, athletes, hostDriven = false } = opts;
   const items = athleteItems(athletes);
   const total = q.clues.length;
+  const timed = !hostDriven && PLAY.clueSeconds > 0;
   let timer = null;
   let clueStart = performance.now();
   let acs = [];
@@ -67,7 +69,7 @@ export function mountQuestion(el, opts) {
       </div>
       <ol class="clue-list" data-clues></ol>
       <div class="timer" data-timer ${hostDriven ? 'hidden' : ''}>
-        <div class="timer-bar"><span data-bar></span></div>
+        <div class="timer-bar" ${timed ? '' : 'hidden'}><span data-bar></span></div>
         <div class="timer-row">
           <span class="timer-text" data-ttext></span>
           <button class="btn btn-small" data-next type="button">Next clue ▸</button>
@@ -100,6 +102,11 @@ export function mountQuestion(el, opts) {
     $('[data-avail]').innerHTML = state.done ? '' : `Now <b>×${av.mult}</b> · 🏃 ${av.athlete} · 🧩 ${av.pokemon} · both <b>${av.both}</b>`;
     const next = $('[data-next]');
     next.disabled = state.shown >= total || state.done;
+    if (!timed) {
+      $('[data-ttext]').textContent = state.shown < total
+        ? `Stuck? Clue ${state.shown + 1} is worth ×${multiplierAt(state.shown + 1)}`
+        : 'That was the last clue';
+    }
   }
 
   function renderBox(which) {
@@ -209,7 +216,7 @@ export function mountQuestion(el, opts) {
   el.addEventListener('animationend', (e) => e.target.classList.remove('shake'));
 
   if (state.done) end(); // reopened after the reveal (e.g. a reload): show the answer again
-  else if (!hostDriven) { timer = setInterval(tick, 200); tick(); }
+  else if (timed) { timer = setInterval(tick, 200); tick(); }
 
   return {
     setShown: showClue,

@@ -95,7 +95,7 @@ function tick() {
   if (!room || room.phase !== 'question') return;
   const q = currentQ();
   const total = q.clues.length;
-  const limit = room.clue < total ? room.clueSeconds : PLAY.finalSeconds;
+  const limit = room.clue < total ? room.clueSeconds : PLAY.hostFinalSeconds;
   const left = Math.max(0, limit - (Date.now() - room.clueAt) / 1000);
   const ring = el.querySelector('[data-ring]');
   if (ring) {

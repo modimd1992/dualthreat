@@ -308,7 +308,7 @@ function renderPractice() {
 function openHelp() {
   const dlg = openDialog('dlg-help', 'How to play', `
     <ol class="steps">
-      <li><span class="step-n">1</span><div><b>Read the clues</b><p>Every clue describes an athlete <em>and</em> the Gen 1 Pokémon they play like. A new one appears every ${10} seconds, from vague to obvious. Tap <i>Next clue</i> if you can't wait.</p></div></li>
+      <li><span class="step-n">1</span><div><b>Read the clues</b><p>Every clue describes an athlete <em>and</em> the Gen 1 Pokémon they play like. They go from vague to obvious. Take your time, and tap <i>Next clue</i> when you need more help.</p></div></li>
       <li><span class="step-n">2</span><div><b>Guess both</b><p>Type the athlete in one box and the Pokémon in the other. Lock in one and keep working on the other. 3 tries per box.</p></div></li>
       <li><span class="step-n">3</span><div><b>Bonus for both</b><p>1 point each, 3 for both. Earlier clues multiply it: clue 1 is ×5, so one question is worth up to 15.</p></div></li>
     </ol>

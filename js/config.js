@@ -31,8 +31,11 @@ export const DATA = {
 
 // Timing and scoring.
 export const PLAY = {
-  clueSeconds: 10,     // a new clue every 10 seconds (or tap "Next clue")
-  finalSeconds: 20,    // after the last clue, this long to finish before the reveal
+  // Daily Contest and Practice: 0 = no timer, players tap "Next clue" when they want one.
+  // Set clueSeconds to e.g. 20 to bring back automatic clues.
+  clueSeconds: 0,
+  finalSeconds: 30,    // with a timer on: time after the last clue before the answer shows
+  hostFinalSeconds: 20, // Host Mode with auto clues: time after the last clue before the reveal
   attempts: 3,         // wrong guesses allowed per box
   athletePts: 1,
   pokemonPts: 1,

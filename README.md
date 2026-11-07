@@ -17,7 +17,7 @@
 
 Answering on an earlier clue multiplies it: **clue 1 ×5, clue 2 ×4, clue 3 ×3, clue 4 ×2, clue 5 ×1**. The bonus uses the multiplier of whichever answer you got second. A perfect question is 15 points and a perfect Daily Contest is 150. The points available are shown as each clue appears.
 
-A new clue appears every 10 seconds, or when you tap **Next clue**. After the last clue you get 20 more seconds. Each box allows 3 guesses, and wrong guesses cost nothing. All of this is in `PLAY` in [`js/config.js`](js/config.js).
+There's no timer in the Daily Contest or Practice: players tap **Next clue** when they want more help, and the answer shows when both boxes are done or they tap **Reveal the answer**. To bring back automatic clues, set `clueSeconds` (e.g. 20) in `PLAY` in [`js/config.js`](js/config.js). Each box allows 3 guesses, and wrong guesses cost nothing.
 
 ---
 
@@ -125,7 +125,7 @@ Other commands:
 | H | Hide/show the control bar (so it's not on stream) |
 | F | Full screen |
 
-With auto on, the last clue counts down 20 seconds and then reveals by itself. Refreshing the host page goes back into the same room. **End room** deletes the room and its players.
+With auto on, the last clue counts down 20 seconds (`hostFinalSeconds`) and then reveals by itself. Refreshing the host page goes back into the same room. **End room** deletes the room and its players.
 
 **Rehearse with no setup:** open `http://localhost:8090/host.html?local`, create a room, then open `http://localhost:8090/join.html?local` in other tabs. Local rooms only work between tabs of one browser.
 
