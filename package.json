@@ -1,0 +1,12 @@
+{
+  "name": "modimatch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ModiMatch: guess the athlete and their Gen 1 comp. Companion to ModiDex.",
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "check": "node tools/validate.mjs",
+    "new": "node tools/new-clue.mjs"
+  }
+}

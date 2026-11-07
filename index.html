@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ModiMatch · Guess the Athlete and the Pokémon</title>
+  <meta name="description" content="A free daily sports trivia game. Read the clues and guess both the mystery NFL, NBA or MLB athlete and the Gen 1 Pokémon they play like. From the makers of ModiDex.">
+  <meta name="theme-color" content="#0b1020">
+  <meta property="og:title" content="ModiMatch · Guess the Athlete and the Pokémon">
+  <meta property="og:description" content="Clues describe an athlete and a Gen 1 Pokémon at once. Guess both, faster for more points. New contest every day.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://playmodimatch.com/">
+  <meta property="og:image" content="https://playmodimatch.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://playmodimatch.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20261107004652">
+</head>
+<body>
+  <header class="topbar">
+    <div class="top-actions">
+      <button class="icon-btn" id="btn-help" aria-label="How to play">?</button>
+      <button class="icon-btn" id="btn-board" aria-label="Leaderboard">🏆</button>
+    </div>
+    <a class="brand" href="./" aria-label="ModiMatch home">
+      <img src="assets/icon.svg" alt="" width="34" height="34">
+      <span class="brand-name">Modi<span>Match</span></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="btn-account" aria-label="Account">👤</button>
+      <button class="icon-btn" id="btn-stats" aria-label="Stats">📊</button>
+    </div>
+  </header>
+
+  <nav class="kinds" id="kinds" aria-label="Game type"></nav>
+  <nav class="modes" id="modes" aria-label="Choose a sport"></nav>
+
+  <main id="app">
+    <p class="loading">Loading today's clues…</p>
+  </main>
+
+  <footer class="footer">
+    <p>New Daily Contest every day at midnight ET. Athlete data from <a href="https://playmodidex.com" id="sister-link">ModiDex</a>.</p>
+    <p class="footer-links"><a href="host.html">🎥 Host Mode</a><a href="join.html">📱 Join a game</a><a href="privacy.html">Privacy</a><span id="feedback-link"></span></p>
+    <p class="legal">Fan-made game. Not affiliated with or endorsed by Nintendo, The Pokémon Company, Game Freak, the NFL, NBA, MLB, or any team or player. Pokémon names are trademarks of their owners and are mentioned only for comparison.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="dlg-help" class="dialog" aria-labelledby="help-title"></dialog>
+  <dialog id="dlg-stats" class="dialog" aria-labelledby="stats-title"></dialog>
+  <dialog id="dlg-account" class="dialog" aria-labelledby="account-title"></dialog>
+  <dialog id="dlg-board" class="dialog" aria-labelledby="board-title"></dialog>
+
+  <script type="importmap">
+{
+  "imports": {
+    "./js/autocomplete.js": "./js/autocomplete.js?v=20261107004652",
+    "./js/cloud.js": "./js/cloud.js?v=20261107004652",
+    "./js/clueset.js": "./js/clueset.js?v=20261107004652",
+    "./js/config.js": "./js/config.js?v=20261107004652",
+    "./js/daily.js": "./js/daily.js?v=20261107004652",
+    "./js/data.js": "./js/data.js?v=20261107004652",
+    "./js/firebase-config.js": "./js/firebase-config.js?v=20261107004652",
+    "./js/game.js": "./js/game.js?v=20261107004652",
+    "./js/gen1.js": "./js/gen1.js?v=20261107004652",
+    "./js/host.js": "./js/host.js?v=20261107004652",
+    "./js/join.js": "./js/join.js?v=20261107004652",
+    "./js/main.js": "./js/main.js?v=20261107004652",
+    "./js/question.js": "./js/question.js?v=20261107004652",
+    "./js/room.js": "./js/room.js?v=20261107004652",
+    "./js/share.js": "./js/share.js?v=20261107004652",
+    "./js/storage.js": "./js/storage.js?v=20261107004652",
+    "./js/ui.js": "./js/ui.js?v=20261107004652",
+    "./js/util.js": "./js/util.js?v=20261107004652"
+  }
+}
+  </script>
+
+  <script type="module" src="js/main.js?v=20261107004652"></script>
+</body>
+</html>

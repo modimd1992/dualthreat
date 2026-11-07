@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Draws the share image (og.png) and home-screen icon (apple-touch-icon.png).
+     Open http://localhost:8090/tools/make-images.html with the dev server running,
+     and click "Save to assets/" (or right-click each image and "Save image as…"). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ModiMatch images</title>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>body { background: #333; color: #fff; font: 14px system-ui; padding: 20px; } img { display: block; margin: 10px 0 24px; max-width: 100%; }</style>
+</head>
+<body>
+  <button id="save">Save to assets/</button> <span id="msg"></span>
+  <p>og.png (1200×630)</p><img id="og" alt="">
+  <p>apple-touch-icon.png (180×180)</p><img id="touch" alt="">
+  <script type="module">
+    await document.fonts.load('80px "Russo One"');
+    await document.fonts.load('600 30px Inter');
+    const icon = await new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = '../assets/icon.svg'; });
+
+    function background(ctx, w, h) {
+      ctx.fillStyle = '#0b1020'; ctx.fillRect(0, 0, w, h);
+      let g = ctx.createRadialGradient(w / 2, -h * 0.3, 10, w / 2, -h * 0.3, w * 0.8);
+      g.addColorStop(0, 'rgba(255,92,168,0.35)'); g.addColorStop(1, 'rgba(255,92,168,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+      g = ctx.createRadialGradient(w, 0, 10, w, 0, w * 0.6);
+      g.addColorStop(0, 'rgba(34,211,238,0.22)'); g.addColorStop(1, 'rgba(34,211,238,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    }
+
+    // Share image
+    const c = document.createElement('canvas'); c.width = 1200; c.height = 630;
+    const x = c.getContext('2d');
+    background(x, 1200, 630);
+    x.drawImage(icon, 90, 150, 200, 200);
+    x.font = '96px "Russo One"'; x.fillStyle = '#eef2ff'; x.fillText('Modi', 330, 270);
+    const mw = x.measureText('Modi').width; x.fillStyle = '#ff5ca8'; x.fillText('Match', 330 + mw, 270);
+    x.font = '600 38px Inter'; x.fillStyle = '#9aa6cf'; x.fillText('Guess the athlete AND the Gen 1 Pokémon', 334, 335);
+    let cx = 334; x.font = '600 34px Inter';
+    for (const [t, col] of [['🏃 Athlete', '#3b82f6'], ['⇄', '#ff5ca8'], ['🧩 Pokémon', '#eab308']]) {
+      const w = x.measureText(t).width + 44;
+      x.fillStyle = '#161f3d'; x.strokeStyle = col; x.lineWidth = 3;
+      x.beginPath(); x.roundRect(cx, 380, w, 64, 32); x.fill(); x.stroke();
+      x.fillStyle = '#eef2ff'; x.fillText(t, cx + 22, 424); cx += w + 16;
+    }
+    x.font = '600 30px Inter'; x.fillStyle = '#22d3ee';
+    x.fillText('Daily trivia · NFL · NBA · MLB · From the makers of ModiDex', 334, 520);
+    document.getElementById('og').src = c.toDataURL('image/png');
+
+    // Home-screen icon
+    const a = document.createElement('canvas'); a.width = 180; a.height = 180;
+    const y = a.getContext('2d');
+    background(y, 180, 180);
+    y.drawImage(icon, 18, 18, 144, 144);
+    document.getElementById('touch').src = a.toDataURL('image/png');
+    const put = (name, canvas) => new Promise((ok) => canvas.toBlob((b) => fetch(`/_save/${name}.png`, { method: 'PUT', body: b }).then(ok)));
+    document.getElementById('save').onclick = async () => {
+      await put('og', c); await put('apple-touch-icon', a);
+      document.getElementById('msg').textContent = 'Saved.';
+    };
+  </script>
+</body>
+</html>

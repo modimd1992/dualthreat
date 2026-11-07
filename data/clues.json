@@ -1,0 +1,725 @@
+{
+  "_readme": "ModiMatch clue sets. One entry per athlete, linked by ModiDex athlete id. 'pokemon' must match that athlete's ModiDex comp (a guard: if ModiDex changes the comp, the set is skipped until you update it). 4-5 clues, vague to specific, each describing BOTH. Tokens filled from live ModiDex data: {sport} {team} {position} {number} {division}. Add a new set with: node tools/new-clue.mjs <athlete name>. Check with: node tools/validate.mjs",
+  "sets": [
+    {
+      "athleteId": "nfl-patrick-mahomes",
+      "pokemon": "Alakazam",
+      "clues": [
+        "It makes the hardest parts of its job look almost too easy.",
+        "It's at its most dangerous when everything around it breaks down.",
+        "Its mind races faster than anyone's, and it can deliver from any angle without even looking.",
+        "Psychic-level brilliance from the {position} spot, with multiple {sport} MVPs and Super Bowl rings.",
+        "Wears #{number} for the {team} and solves defenses while gripping a spoon in each hand."
+      ],
+      "why": "Mahomes and Alakazam are both genius minds: Alakazam's IQ is said to be 5,000, and Mahomes sees throws (and no-look angles) nobody else does."
+    },
+    {
+      "athleteId": "nfl-josh-allen",
+      "pokemon": "Tauros",
+      "clues": [
+        "It's built bigger and tougher than most others in its line of work.",
+        "Once it starts running, it doesn't stop until something gets knocked over.",
+        "Raised on a farm, it grew into a huge, rugged beast that loves contact.",
+        "A no-evolution Normal-type... and a cannon-armed {position} who has hurdled defenders in the {sport}.",
+        "Plays for the {team} in the snow, and it's a charging bull that whips itself with its three tails."
+      ],
+      "why": "Josh Allen plays like Tauros charges: head down, full speed, through whoever is in front of him. A bull for Buffalo just fits."
+    },
+    {
+      "athleteId": "nfl-lamar-jackson",
+      "pokemon": "Zapdos",
+      "clues": [
+        "Opponents who reach for it usually grab nothing but air.",
+        "It strikes so suddenly that it's gone before anyone can react.",
+        "It crackles with electricity every time it takes off, and many already call it a legend.",
+        "An Electric legend... and a Heisman-winning {position} who went 32nd overall and won {sport} MVP twice.",
+        "Wears #{number} for the {team}, and it's the yellow, spiky thunderbird of Kanto's legendary trio."
+      ],
+      "why": "Lamar Jackson is lightning in cleats, a legendary talent no defender can catch, just like the thunderbird Zapdos. A legendary bird for the Ravens."
+    },
+    {
+      "athleteId": "nfl-joe-burrow",
+      "pokemon": "Articuno",
+      "clues": [
+        "It carries itself with a quiet confidence that rivals find unsettling.",
+        "It picks apart opponents with surgical precision, one clean cut at a time.",
+        "Its frosty calm became legendary during one unbeaten championship season.",
+        "An Ice-type legendary bird... and a Heisman-winning {position} who went first overall in the {sport} draft.",
+        "Wears #{number} for the {team}, celebrated a title with a cigar, and it's the icy blue legendary bird."
+      ],
+      "why": "Joe Burrow is the coolest customer in football, calm under any pressure, so his match is Articuno, the legendary bird of ice."
+    },
+    {
+      "athleteId": "nfl-jalen-hurts",
+      "pokemon": "Rhyhorn",
+      "clues": [
+        "It does its job the same way every day, no matter what anyone says.",
+        "It's built low, thick and sturdy, and its expression rarely changes.",
+        "Its best weapon is a short, straight-ahead shove that bulldozes everything in front of it.",
+        "A Ground/Rock beast in its first form... and a {position} who began at Alabama before transferring.",
+        "Wears #{number} for the {team}, made the tush push famous, and it's a gray, spiky charging rhino."
+      ],
+      "why": "Jalen Hurts and Rhyhorn both charge forward in a straight line and can't be stopped. Picture the tush push and you've pictured Rhyhorn."
+    },
+    {
+      "athleteId": "nfl-brock-purdy",
+      "pokemon": "Magikarp",
+      "clues": [
+        "It owes a lot of its success to the people who stuck with it.",
+        "It spent its early days waiting its turn far down the pecking order.",
+        "Everyone looked past it, but it proved the most overlooked pick can grow into something fearsome.",
+        "A Water-type famous for being weak at first... and a {position} taken with the final pick of the draft.",
+        "Was crowned Mr. Irrelevant, now starts for the {team}, and it's a flopping orange fish that only knows Splash."
+      ],
+      "why": "Brock Purdy was the very last pick of the 2022 draft. Magikarp is the Pokémon everyone ignores, until it becomes something nobody can ignore."
+    },
+    {
+      "athleteId": "nfl-justin-jefferson",
+      "pokemon": "Mew",
+      "clues": [
+        "It brings a joyful energy wherever it goes.",
+        "Rivals can never quite keep track of it, no matter how closely they watch.",
+        "Playful and able to learn almost any skill, it loves to dance after showing off.",
+        "A mythical Psychic-type treasure... and an LSU {position} who won Offensive Player of the Year.",
+        "Does the Griddy for the {team}, and it's a tiny pink cat-like creature said to hold every Pokémon's DNA."
+      ],
+      "why": "Justin Jefferson can run every route and do anything on the field, like Mew, which can learn every move. Both are rare, graceful and playful."
+    },
+    {
+      "athleteId": "nfl-jamarr-chase",
+      "pokemon": "Moltres",
+      "clues": [
+        "Once it gets loose, it leaves a blazing trail behind it.",
+        "Give it a little open space and it ignites into something nobody can catch.",
+        "It sat out a whole season, then reappeared in a dazzling flash of flame.",
+        "A Fire-type legendary bird... and a {position} who went fifth overall and won {sport} Offensive Rookie of the Year.",
+        "Reunited in the pros with its LSU quarterback, wears #{number} for the {team}, and it's the flaming legendary bird."
+      ],
+      "why": "Ja'Marr Chase catches a short pass and then streaks away like fire. Moltres is the legendary firebird, the flaming partner to Burrow's Articuno."
+    },
+    {
+      "athleteId": "nfl-ceedee-lamb",
+      "pokemon": "Staryu",
+      "clues": [
+        "It's a reliable go-to option that rarely takes a day off.",
+        "It always seems to draw every eye in the place.",
+        "Knock it down and it bounces right back, as if it can regrow whatever it lost.",
+        "A Water-type in its first form... and an Oklahoma {position} taken in the first round of the {sport} draft.",
+        "Wears #{number} for the {team}, and it's a brown starfish with a flashing red jewel at its core."
+      ],
+      "why": "CeeDee Lamb is the star wideout for the team with the star on its helmet. Staryu is a spinning star that slips free of anything."
+    },
+    {
+      "athleteId": "nfl-puka-nacua",
+      "pokemon": "Krabby",
+      "clues": [
+        "It plays with a scrappy, never-back-down attitude.",
+        "It doesn't mind getting physical, happily shoving bigger opponents around.",
+        "It scuttled up from the late rounds and set rookie records almost immediately.",
+        "A Water-type still in its first form... and a {position} who transferred to BYU before entering the {sport}.",
+        "Wears #{number} for the {team}, and it's a little orange crab whose giant pincers crush whatever they grip."
+      ],
+      "why": "Puka Nacua was a fifth-round pick with a vise grip on every catch and a love of blocking. That's Krabby: a young catcher with crushing claws."
+    },
+    {
+      "athleteId": "nfl-saquon-barkley",
+      "pokemon": "Dragonite",
+      "clues": [
+        "It's a rare blend of size and power that few others can match.",
+        "It's friendly and easygoing until it's time to go to work.",
+        "It looks too heavy to fly, yet it can plow straight through or leap clean over anything in its way.",
+        "A Dragon-type in its final form... and a Penn State {position} who once ran for 2,000 yards in a season.",
+        "Wears #{number} for the {team}, once hurdled a tackler backward, and it's a chubby orange dragon with tiny wings."
+      ],
+      "why": "Saquon Barkley has a bruiser's body but flies over defenders, just like Dragonite, the bulky, friendly dragon that can still take flight."
+    },
+    {
+      "athleteId": "nfl-derrick-henry",
+      "pokemon": "Nidoking",
+      "clues": [
+        "It carries itself like it's the one in charge.",
+        "A single swipe can send an opponent tumbling to the ground.",
+        "Enormous and only stronger as the fight drags on, it rules the late stages like royalty.",
+        "A Poison/Ground final form... and a Heisman-winning {position} from Alabama with a legendary stiff-arm.",
+        "Stiff-arms tacklers for the {team}, and it's a huge purple beast with a poison horn and a pole-snapping tail."
+      ],
+      "why": "Derrick Henry's nickname is King Henry, and Nidoking bulldozes everything in its path. Both are huge bruisers that get stronger as the fight goes on."
+    },
+    {
+      "athleteId": "nfl-christian-mccaffrey",
+      "pokemon": "Eevee",
+      "clues": [
+        "It can adapt into whatever its situation demands.",
+        "It's as comfortable in one role as another, which makes it hard to plan against.",
+        "Its family tree is absolutely packed with talent.",
+        "A Normal-type with many possible futures... and a Stanford {position} who's a threat as a runner and receiver.",
+        "Wears #{number} for the {team}, and it's a fluffy brown fox-like creature that can evolve many different ways."
+      ],
+      "why": "Christian McCaffrey does it all: run, catch, block. Eevee can become whatever the moment needs. Both come from talented families (Ed McCaffrey is his dad)."
+    },
+    {
+      "athleteId": "nfl-myles-garrett",
+      "pokemon": "Gyarados",
+      "clues": [
+        "Opponents always have to plan around it.",
+        "It spends most of its time chasing down whatever it's hunting.",
+        "When angry it destroys everything, and its size and speed don't seem like they should coexist.",
+        "A Water/Flying menace... and a Texas A&M {position} who went first overall and won Defensive Player of the Year.",
+        "Hunts quarterbacks for the {team}, and it's a furious blue sea serpent that evolved from a flopping fish."
+      ],
+      "why": "Myles Garrett is a freak of size and speed who rampages off the edge, like Gyarados, the furious sea serpent nobody can contain."
+    },
+    {
+      "athleteId": "nfl-travis-kelce",
+      "pokemon": "Wigglytuff",
+      "clues": [
+        "It loves an audience and puffs up when the spotlight finds it.",
+        "It always seems to find the soft, open spots and settle right in.",
+        "It's at its most dangerous in the biggest moments, then celebrates louder than anyone.",
+        "A Normal-type in its final form... and a three-time champion {position} with a hit podcast alongside its brother.",
+        "Wears #{number} for the {team}, catches passes from a superstar QB, and it's a pink balloon puffball with long ears."
+      ],
+      "why": "Travis Kelce is a crowd-pleaser who loves the spotlight and puffs up when it finds him, just like Wigglytuff, the balloon Pokémon that evolves from Jigglypuff."
+    },
+    {
+      "athleteId": "nfl-george-kittle",
+      "pokemon": "Nidoqueen",
+      "clues": [
+        "It's sturdy, protective and happiest when it's shielding its companions.",
+        "It loves a good body slam and celebrates every one it lands.",
+        "Its tough, armored body delivers heavy hits, then rumbles forward with surprising speed.",
+        "A Poison/Ground final form... and a former fifth-round {position} from Iowa who blocks like a pro wrestler.",
+        "Wears #{number} for the {team}, and it's a blue, armored, spiky beast that's the matriarch of its line."
+      ],
+      "why": "George Kittle blocks with joyful violence and protects his teammates. Nidoqueen is sturdy and powerful, and fiercely protects its young."
+    },
+    {
+      "athleteId": "nfl-jayden-daniels",
+      "pokemon": "Doduo",
+      "clues": [
+        "It looked comfortable from the very first day it showed up.",
+        "It does its best work on the ground at full speed, even though it could take to the air.",
+        "Its calm head and its quick legs seem to work independently of each other.",
+        "A two-headed Normal/Flying bird... and a Heisman-winning {position} who became Offensive Rookie of the Year.",
+        "Wears #{number} for the {team}, threw a famous rookie Hail Mary, and it's a two-headed bird that runs, not flies."
+      ],
+      "why": "Jayden Daniels is a true dual threat: he runs and he throws. Doduo has two heads and would rather sprint than fly."
+    },
+    {
+      "athleteId": "nfl-travis-hunter",
+      "pokemon": "Zubat",
+      "clues": [
+        "It never stops moving and seems to be everywhere at once.",
+        "It's active almost every moment and rarely needs a breather.",
+        "It's equally at home attacking and defending, swooping in from any direction.",
+        "A Poison/Flying first form... and a Heisman-winning two-way star out of Colorado.",
+        "Plays both ways for the {team}, went second overall, and it's an eyeless blue bat with purple wings."
+      ],
+      "why": "Travis Hunter plays receiver and cornerback and never leaves the field. Zubat is everywhere at once, flying both ways without stopping."
+    },
+    {
+      "athleteId": "nfl-aaron-rodgers",
+      "pokemon": "Omanyte",
+      "clues": [
+        "It has a reputation for being a little different from the rest.",
+        "It's been written off as finished more than once, only to come back.",
+        "It comes from an older era, and it once sank deep before someone finally picked it up.",
+        "A Rock/Water fossil revived from ancient remains... and a four-time MVP {position} with a Super Bowl MVP too.",
+        "Wears #{number} for the {team}, and it's a blue, spiral-shelled ancient creature revived from a helix fossil."
+      ],
+      "why": "Aaron Rodgers is a timeless survivor with old-school wisdom. He slid on draft day and keeps coming back, like Omanyte, revived from an ancient fossil."
+    },
+    {
+      "athleteId": "nfl-jahmyr-gibbs",
+      "pokemon": "Rattata",
+      "clues": [
+        "It's at its most dangerous with just a little open space.",
+        "It doesn't need much room to make a big impact.",
+        "Small and quick, it scurries through the tiniest cracks and is gone before anyone notices.",
+        "A Normal-type in its first form... and a first-round {position} out of Alabama who catches like a receiver.",
+        "Wears #{number} for the {team}, and it's a small purple rodent with long, sharp front teeth."
+      ],
+      "why": "Jahmyr Gibbs hits the hole in a flash and is gone, just like Rattata, the small, lightning-quick Pokémon that darts through any crack."
+    },
+    {
+      "athleteId": "nba-nikola-jokic",
+      "pokemon": "Slowbro",
+      "clues": [
+        "It isn't flashy, but the results speak for themselves.",
+        "It wins in ways that look almost too simple to work.",
+        "It looks half-asleep and never hurries, yet it's somehow always a step ahead of everyone.",
+        "A pink Water/Psychic-type, and a Serbian {position} who went from 41st pick to MVP.",
+        "Wears #{number} for the {team}, loves horse racing, and has a spiky bivalve biting its tail."
+      ],
+      "why": "Nikola Jokić and Slowbro both look sleepy and unbothered, then bend the game with their minds. Jokić's no-look passes are pure Psychic-type."
+    },
+    {
+      "athleteId": "nba-shai-gilgeous-alexander",
+      "pokemon": "Articuno",
+      "clues": [
+        "It's smooth enough to make difficult things look routine.",
+        "It rarely panics, and it seems to save its best for the biggest moments.",
+        "Cool and graceful, it glides past rivals without breaking a sweat, leaving them stuck in place.",
+        "A legendary Ice/Flying-type, and a Canadian {position} who went one-and-done at Kentucky.",
+        "Wears #{number} for the {team}, owns the midrange, and is a blue legendary bird with a long, flowing tail."
+      ],
+      "why": "Shai Gilgeous-Alexander and Articuno are both ice-cold and graceful: rare legends that glide past everyone. Fittingly, SGA hails from snowy Canada."
+    },
+    {
+      "athleteId": "nba-victor-wembanyama",
+      "pokemon": "Mewtwo",
+      "clues": [
+        "It takes its craft extremely seriously.",
+        "It does things that seem to break the usual rules of what's possible.",
+        "Its arrival was hyped like nothing before, and it towers over everyone it faces.",
+        "A legendary Psychic-type built to be the strongest, and a French {position} taken first overall.",
+        "This French phenom wears #{number} for the {team}, and was cloned from a tiny pink mythical."
+      ],
+      "why": "Victor Wembanyama and Mewtwo are both unlike anything seen before: towering, freakishly gifted beings that seem designed in a lab to be unbeatable."
+    },
+    {
+      "athleteId": "nba-luka-doncic",
+      "pokemon": "Mew",
+      "clues": [
+        "It loves having the spotlight all to itself.",
+        "It does things its own way, and somehow it keeps working.",
+        "It toys with opponents like it's a game and can pick up any move it has ever seen.",
+        "A mythical Psychic-type, and a Slovenian {position} who was EuroLeague MVP as a teenager.",
+        "Wears #{number} for the {team}, is famous for its step-back, and is a tiny pink mythical with a long tail."
+      ],
+      "why": "Luka Dončić and Mew are both rare, playful geniuses that seem to know every move in the game, and both were legends before most people ever saw them."
+    },
+    {
+      "athleteId": "nba-stephen-curry",
+      "pokemon": "Horsea",
+      "clues": [
+        "It stays upbeat and loose, even when things go wrong.",
+        "It doesn't need to get close to do damage.",
+        "Small and easy to underestimate, it picks off targets from far away with impossible-looking shots.",
+        "A tiny Water-type sharpshooter, and a {position} from Davidson who won the first unanimous MVP.",
+        "Wears #{number} for the {team}, changed the game from deep, and is a tiny blue seahorse that shoots jets of water."
+      ],
+      "why": "Stephen Curry and Horsea are both small, precise long-range shooters: Horsea snipes bugs out of the air with jets of water, and Curry snipes from deep."
+    },
+    {
+      "athleteId": "nba-anthony-edwards",
+      "pokemon": "Zapdos",
+      "clues": [
+        "It's never short on confidence.",
+        "It loves the big stage and seems to feed off the noise.",
+        "Loud and brash, it soars high and then comes crashing down with thunderous force.",
+        "A No. 1 overall pick from Georgia, and a legendary Electric/Flying bird that roars out of thunderclouds.",
+        "Wears #{number} for the {team}, posterizes anyone in its way, and is a spiky yellow legendary bird."
+      ],
+      "why": "Anthony Edwards and Zapdos are both loud, electric and explosive, striking like thunder from high above anyone in their path."
+    },
+    {
+      "athleteId": "nba-joel-embiid",
+      "pokemon": "Rhydon",
+      "clues": [
+        "Huge and heavy, it's nearly impossible to move once it plants itself in the middle.",
+        "It took a long time to reach its final form, but it was worth the wait.",
+        "A Rock-type behemoth with surprising skill, it bullies its way to the heart of every battle.",
+        "A Ground/Rock giant with a drill on its snout, and a Cameroon-born {position} who starred at Kansas.",
+        "Wears #{number} for the {team}, missed its first two seasons, and is a gray, upright beast with a drill horn."
+      ],
+      "why": "Joel Embiid and Rhydon are both massive, armored and dominant near the basket, and both needed a long wait before reaching their final form."
+    },
+    {
+      "athleteId": "nba-jalen-brunson",
+      "pokemon": "Marowak",
+      "clues": [
+        "It's a fighter that never backs down from a challenge.",
+        "It carries a parent's legacy with it into every fight.",
+        "Undersized but tough, this gritty Ground-type stays low and clubs its way through crowds.",
+        "A Ground-type that swings a bone like a club, and a former second-round pick turned star {position}.",
+        "Leads the {team} in #{number} after two titles at Villanova, and wears a skull as a helmet."
+      ],
+      "why": "Jalen Brunson and Marowak are both undersized but gritty and battle-tested, and both carry a parent's legacy (Brunson's dad Rick played in the NBA)."
+    },
+    {
+      "athleteId": "nba-donovan-mitchell",
+      "pokemon": "Pikachu",
+      "clues": [
+        "It's got a big personality that crowds can't get enough of.",
+        "It can go off at any moment, and when it does, the whole place feels it.",
+        "Smaller than many rivals, it stores up energy and releases it in sudden, dazzling bursts.",
+        "The most famous Electric-type of all, and a Louisville product who once scored 71 in a game.",
+        "Wears #{number} for the {team}, won the 2018 Slam Dunk Contest, and is a yellow mouse with red cheeks."
+      ],
+      "why": "Donovan Mitchell and Pikachu are both small, electric fan favorites that store up energy and then light up the room in a flash."
+    },
+    {
+      "athleteId": "nba-cade-cunningham",
+      "pokemon": "Kadabra",
+      "clues": [
+        "Calm and calculating, it seems to see the play before it happens.",
+        "Already strong, but everyone agrees it hasn't reached its final form yet.",
+        "A Psychic-type that controls the action with its mind and sets the pace of every battle.",
+        "A Psychic-type with a star on its forehead, and a No. 1 overall pick out of Oklahoma State.",
+        "Runs the show for the {team} in #{number}, and this mustached Psychic-type always holds a bent spoon."
+      ],
+      "why": "Cade Cunningham and Kadabra are both already powerful minds that control the pace, and both are still on the way to their final form."
+    },
+    {
+      "athleteId": "nba-kevin-durant",
+      "pokemon": "Haunter",
+      "clues": [
+        "It's hard to contain once it gets going.",
+        "It can strike from places rivals don't expect.",
+        "Long, thin and hard to block, it's famous for moving between teams, which is exactly how it evolves.",
+        "A purple Ghost-type with floating hands, and a four-time Olympic gold medalist {position}.",
+        "Wears #{number} for the {team}, was drafted second by Seattle, and is a grinning purple specter with no arms."
+      ],
+      "why": "Kevin Durant and Haunter are both long, slender and ghostly, with shots that float over everything. Haunter evolves by trade, and KD has been traded plenty."
+    },
+    {
+      "athleteId": "nba-chet-holmgren",
+      "pokemon": "Dragonair",
+      "clues": [
+        "It's still young, but it already carries itself like a veteran.",
+        "Rivals find it much tougher than its frame suggests.",
+        "Long, slender and graceful with surprising reach, it's still evolving into its final form.",
+        "A rare, elegant Dragon-type that swats shots for a living in the {sport}.",
+        "Wears #{number} for the {team} after starring at Gonzaga, and its first form is a tiny serpent."
+      ],
+      "why": "Chet Holmgren and Dragonair are both long, slender and graceful, with surprising reach, and both are still evolving into their final form."
+    },
+    {
+      "athleteId": "nba-cooper-flagg",
+      "pokemon": "Dratini",
+      "clues": [
+        "It's mature and composed beyond what you'd expect.",
+        "It's good at a little bit of everything, and still getting better.",
+        "Young and rare, it keeps shedding its old skin as it grows bigger and stronger.",
+        "A baby Dragon-type once thought to be a myth, and a No. 1 overall pick from Maine by way of Duke.",
+        "Wears #{number} for the {team}, went first overall in 2025, and is a small blue serpent with a white forehead bulb."
+      ],
+      "why": "Cooper Flagg and Dratini are both rare young talents in their first stage, already special and destined to grow into superstars."
+    },
+    {
+      "athleteId": "nba-lebron-james",
+      "pokemon": "Moltres",
+      "clues": [
+        "It brings out the best in those who fight beside it.",
+        "It's been seen in more than one place, and it always draws a crowd.",
+        "It keeps rising long after rivals fade, and as one of a legendary trio it once brought the Heat.",
+        "A legendary Fire/Flying bird, and a No. 1 pick who came straight out of high school in Ohio.",
+        "Wears #{number} for the {team}, is the {sport}'s all-time leading scorer, and is a legendary firebird."
+      ],
+      "why": "LeBron James and Moltres are both legendary flames that keep rising season after season. LeBron even formed a 'Big Three' with the Miami Heat."
+    },
+    {
+      "athleteId": "nba-giannis-antetokounmpo",
+      "pokemon": "Gyarados",
+      "clues": [
+        "It plays with a relentless, all-out motor.",
+        "Once it gets moving toward a target, nothing in its way seems to matter.",
+        "Raw and overlooked at first, it transformed into a long, powerful force that covers ground in a blink.",
+        "A towering Water/Flying serpent famed for its rage, and a Greek {position} with two MVPs.",
+        "Wears #{number} for the {team}, won a 2021 ring in Milwaukee, and is a huge blue serpent born from a flopping fish."
+      ],
+      "why": "Giannis Antetokounmpo and Gyarados both grew from skinny, overlooked beginnings into towering, unstoppable forces of nature."
+    },
+    {
+      "athleteId": "nba-ja-morant",
+      "pokemon": "Pidgeotto",
+      "clues": [
+        "It's thrilling to watch when it's at its best.",
+        "It attacks from above with acrobatic dives that seem to defy gravity.",
+        "A fearless mid-stage Flying-type that swoops on bigger targets and loves aerial acrobatics.",
+        "A crested Normal/Flying bird with sharp talons, and a former No. 2 pick from Murray State.",
+        "Wears #{number} for the {team}, was drafted by Memphis, and is a brown bird with a red-and-yellow crest."
+      ],
+      "why": "Ja Morant and Pidgeotto both swoop in from above with fearless, high-flying attacks on targets much bigger than themselves."
+    },
+    {
+      "athleteId": "nba-james-harden",
+      "pokemon": "Hypno",
+      "clues": [
+        "It's clever, patient, and always working an angle.",
+        "It has a signature move everyone knows is coming, yet few can stop.",
+        "Its unhurried back-and-forth rhythm lulls opponents into a trance before it strikes.",
+        "A fully evolved Psychic-type that eats dreams, and a former MVP and scoring champ with a famous step-back.",
+        "Wears #{number} for the {team}, won MVP in Houston, and is the evolved dream-eater that swings a pendulum."
+      ],
+      "why": "James Harden and Hypno are both crafty veterans that lull defenders with a steady rhythm before they strike."
+    },
+    {
+      "athleteId": "nba-draymond-green",
+      "pokemon": "Golbat",
+      "clues": [
+        "Always in your face, it simply will not leave you alone.",
+        "Its mouth is easily its most famous feature.",
+        "A pesky Poison-type that screeches nonstop to keep track of everything around it.",
+        "A Poison/Flying-type pest, and a second-round pick who became Defensive Player of the Year.",
+        "A four-time champ from Michigan State in #{number} for the {team}, it's a blue bat with a gaping, fanged mouth."
+      ],
+      "why": "Draymond Green and Golbat are both relentless pests with famously big mouths, and they never leave foes alone."
+    },
+    {
+      "athleteId": "nba-kawhi-leonard",
+      "pokemon": "Kingler",
+      "clues": [
+        "It tends to show up biggest when the most is on the line.",
+        "It's patient and calculated, never wasting energy it doesn't need to spend.",
+        "It rarely makes a sound, but its one oversized feature crushes whatever it grabs.",
+        "A Water-type with a massive pincer, and a two-time Finals MVP and two-time Defensive Player of the Year.",
+        "Wears #{number} for the {team}, hit a four-bounce Game 7 buzzer-beater, and is a big red crab."
+      ],
+      "why": "Kawhi Leonard and Kingler both have enormous grabbers that clamp down on anything, and both pick their moments to save their heavy-duty power."
+    },
+    {
+      "athleteId": "nba-bam-adebayo",
+      "pokemon": "Cloyster",
+      "clues": [
+        "It's the steady presence everyone else leans on.",
+        "It can handle opponents of just about any size.",
+        "It can wall off almost anything, and its tough exterior shields it from attackers big and small.",
+        "A spiky Water/Ice-type fortress, and a {position} from Kentucky who can switch onto anyone.",
+        "Anchors the {team} defense in #{number}, has two Olympic golds, and is a spiky bivalve with a dark face inside."
+      ],
+      "why": "Bam Adebayo and Cloyster are both nearly impenetrable defensive walls that can stonewall attackers of any size."
+    },
+    {
+      "athleteId": "mlb-shohei-ohtani",
+      "pokemon": "Mew",
+      "clues": [
+        "It's remarkably humble for something so powerful.",
+        "It's far more versatile than most of its peers.",
+        "Experts say it can do almost anything, and many doubted such a creature could truly exist.",
+        "A mythical marvel from Japan that became the {sport}'s first 50-homer, 50-steal player.",
+        "Wears #{number} for the {team} as a two-way MVP, and it's the tiny pink mythical with every creature's DNA."
+      ],
+      "why": "Ohtani pitches and hits at an MVP level, like Mew, the mythical said to carry the DNA of every Pokémon and to know every move."
+    },
+    {
+      "athleteId": "mlb-aaron-judge",
+      "pokemon": "Machamp",
+      "clues": [
+        "It is enormous, calm, and built to move heavy things a very long way.",
+        "Others count on it to do the heavy lifting, and it never complains about the load.",
+        "A towering Fighting-type with arms to spare, it sends baseballs into orbit.",
+        "It once set the AL single-season homer record; its power is so vast it wears a belt to rein it in.",
+        "Wears #{number} as captain of the {team}, and it's the four-armed final form with a champion's belt."
+      ],
+      "why": "Judge pairs overwhelming power with quiet discipline, like Machamp, the four-armed Fighting-type whose belt holds its strength in check."
+    },
+    {
+      "athleteId": "mlb-juan-soto",
+      "pokemon": "Mewtwo",
+      "clues": [
+        "It's supremely confident, and it isn't shy about showing it.",
+        "It seems to know what's coming before it arrives, and refuses anything it doesn't like.",
+        "An unnervingly calm Psychic powerhouse with an elite eye that walks and shuffles after taking pitches.",
+        "A Dominican prodigy who won a World Series in Washington while barely out of its teens.",
+        "Wears #{number} for the {team} as a lefty walk machine, and it's the lab-made legend cloned from a mythical."
+      ],
+      "why": "Soto reads pitches like a mind reader. Mewtwo, the lab-built Psychic legend, is the ultimate mind in the Pokémon world."
+    },
+    {
+      "athleteId": "mlb-mookie-betts",
+      "pokemon": "Ditto",
+      "clues": [
+        "It's well liked by just about everyone it works with.",
+        "Give it any role and before long it looks like it was born to play it.",
+        "It won Gold Gloves in the outfield, then reinvented itself as an infielder, a perfect copycat.",
+        "A Normal-type mimic that won an MVP and a title in Boston, and even bowls perfect games for fun.",
+        "Wears #{number} for the {team} as a do-everything champion, and it's the purple blob that only knows Transform."
+      ],
+      "why": "Betts went from Gold Glove right fielder to second base to shortstop. Ditto transforms into whatever it needs to be."
+    },
+    {
+      "athleteId": "mlb-bobby-witt-jr",
+      "pokemon": "Electrode",
+      "clues": [
+        "Its energy is contagious to everyone around it.",
+        "Rivals know that if they blink, it'll already be gone.",
+        "Its explosive speed leaves everyone behind, and rivals hurry once it starts rolling.",
+        "A blazing {position} picked second overall out of a Texas high school in 2019.",
+        "Wears #{number} for the {team}, a big-league pitcher's son, and it's the evolved, upside-down ball that explodes."
+      ],
+      "why": "Witt is one of the fastest players in baseball, and Electrode was the fastest Pokémon of Gen 1, both liable to explode at any moment."
+    },
+    {
+      "athleteId": "mlb-elly-de-la-cruz",
+      "pokemon": "Electabuzz",
+      "clues": [
+        "Its raw tools make every single appearance feel like an event.",
+        "Its power is so untamed that nobody, maybe not even itself, knows what's coming next.",
+        "A towering, switch-hitting Electric-type whose throws and sprints both register off the charts.",
+        "Signed out of the Dominican Republic, it hit for the cycle as a rookie {position}.",
+        "Wears #{number} for the {team} as a base-stealing giant; it's the yellow, tiger-striped blackout maker."
+      ],
+      "why": "De La Cruz has wild, crackling tools that light up any game, like Electabuzz, whose stored electricity can black out a city."
+    },
+    {
+      "athleteId": "mlb-paul-skenes",
+      "pokemon": "Charizard",
+      "clues": [
+        "It's become a fan favorite with a huge following.",
+        "It grew from a modest start into a powerhouse remarkably fast.",
+        "It trained at a flight academy before finding its calling: breathing triple-digit heat.",
+        "It won a college title at LSU, went first overall, and started an All-Star Game as a rookie.",
+        "Wears #{number} for the {team} as a No. 1 pick, and it's the orange, winged starter with a flaming tail."
+      ],
+      "why": "Skenes (an Air Force Academy alum) throws fire and became an ace almost instantly. Charizard is the flying, fire-breathing final starter."
+    },
+    {
+      "athleteId": "mlb-vladimir-guerrero-jr",
+      "pokemon": "Golem",
+      "clues": [
+        "It's a cheerful presence that's easy to root for.",
+        "Its power is the first thing anyone notices about it.",
+        "Sturdy, round and hard to move, it smashes back whatever's thrown at it like an avalanche.",
+        "Born in Montreal to a Hall of Fame father, it once launched 91 homers in a single Home Run Derby.",
+        "Wears #{number} for the {team} at {position}, and it's the rocky boulder that fully evolves only through a trade."
+      ],
+      "why": "Vlad Jr. is a solid, powerful slugger who hits the ball like a rockslide. Golem is a living boulder that rolls downhill."
+    },
+    {
+      "athleteId": "mlb-cal-raleigh",
+      "pokemon": "Kangaskhan",
+      "clues": [
+        "It's a team-first presence that others count on.",
+        "It does a lot of the dirty work that rarely makes headlines.",
+        "It fiercely protects those in its care, crouching low and carrying a lot of weight for the group.",
+        "A {position} from Florida State whose 2022 walk-off homer ended a two-decade playoff drought.",
+        "Wears #{number} for the {team} as a slugging backstop, and it's the kangaroo-like mom with a baby in its pouch."
+      ],
+      "why": "Raleigh is a tough catcher who guards his pitching staff, like Kangaskhan, the fierce parent that protects the baby in its pouch."
+    },
+    {
+      "athleteId": "mlb-francisco-lindor",
+      "pokemon": "Clefable",
+      "clues": [
+        "It's got charm to spare, and fans adore it.",
+        "It comes alive under the night lights and seems to bring good luck to those around it.",
+        "Its sunny, cheerful style hides a tough, rare creature that handles the infield's most demanding spot.",
+        "Puerto Rico's pride, drafted in the first round by Cleveland, it's a Fairy with Gold Gloves.",
+        "Wears #{number} for the {team} as a grinning switch-hitter, and it's the pink moon-dancer evolved by a Moon Stone."
+      ],
+      "why": "Lindor is a charming, smiling leader who is tougher than he looks. Clefable is the beloved, rare Fairy that dances under the moon."
+    },
+    {
+      "athleteId": "mlb-julio-rodriguez",
+      "pokemon": "Aerodactyl",
+      "clues": [
+        "It patrols a huge territory and snatches things right out of the sky.",
+        "It plays like a throwback to another era, yet its energy feels brand new.",
+        "A Rock/Flying predator that covers acres of grass and robs would-be extra-base hits.",
+        "A Dominican-born {position} who won AL Rookie of the Year in 2022.",
+        "Wears #{number} for the {team} in center field, and it's the winged fossil revived from ancient amber."
+      ],
+      "why": "Rodríguez covers a huge patch of center field and robs fly balls. Aerodactyl is the ancient sky predator revived from amber."
+    },
+    {
+      "athleteId": "mlb-fernando-tatis-jr",
+      "pokemon": "Arcanine",
+      "clues": [
+        "It plays with a swagger that some love and some don't.",
+        "It's loyal to those who believe in it.",
+        "Majestic and impossible to ignore, its species is officially classified as legendary.",
+        "This Dominican star's father once hit two grand slams in a single inning.",
+        "Wears #{number} for the {team} as a flashy {position}, and it's the majestic orange dog evolved by a Fire Stone."
+      ],
+      "why": "Tatis is majestic, athletic and full of fire. Arcanine, the regal fire dog, is literally classified as the Legendary Pokémon."
+    },
+    {
+      "athleteId": "mlb-yordan-alvarez",
+      "pokemon": "Snorlax",
+      "clues": [
+        "It's a quiet presence that does its talking with results.",
+        "It doesn't need to move much to make a huge impact.",
+        "Huge and calm, it barely moves, and opponents tiptoe around it, terrified of waking it up.",
+        "Born in Cuba and traded away by the Dodgers as a prospect, it won AL Rookie of the Year in 2019.",
+        "Wears #{number} for the {team} as a hulking Cuban lefty; it's the giant sleeper only a flute can wake."
+      ],
+      "why": "Alvarez is enormous, relaxed and devastating once he swings. Snorlax is the giant, sleepy Pokémon you really don't want to wake."
+    },
+    {
+      "athleteId": "mlb-ronald-acuna-jr",
+      "pokemon": "Raichu",
+      "clues": [
+        "A compact package with a startling amount of energy stored inside.",
+        "Every step crackles; it can beat you with a jolt of power or a burst of speed.",
+        "An Electric-type from Venezuela that steals bases as easily as it hits homers.",
+        "NL Rookie of the Year in 2018, then a unanimous MVP after the first 40-homer, 70-steal season.",
+        "Wears #{number} for the {team}, founded the 40-70 club, and it's the orange mouse evolved by a Thunder Stone."
+      ],
+      "why": "Acuña packs explosive power and speed into a compact frame, just like Raichu, the evolved electric mouse."
+    },
+    {
+      "athleteId": "mlb-yoshinobu-yamamoto",
+      "pokemon": "Ninetales",
+      "clues": [
+        "It isn't the biggest of its kind, but it hides a dazzling number of tricks.",
+        "Opponents never know which of its many tricks is coming next.",
+        "A mystical Fire-type from Japan that places a deep arsenal of pitches with pinpoint precision.",
+        "It won three straight Sawamura Awards in Japan before crossing the Pacific to win a World Series.",
+        "Wears #{number} for the {team} as a Japanese ace; it's the golden fox with a fan of tails that lives 1,000 years."
+      ],
+      "why": "Yamamoto commands a deep, precise arsenal; each of Ninetales' many tails could be a different pitch. Both are mystical and precise."
+    },
+    {
+      "athleteId": "mlb-freddie-freeman",
+      "pokemon": "Slowpoke",
+      "clues": [
+        "It's admired for how consistent it's been, year after year.",
+        "It's patient, and it rarely chases what it doesn't want.",
+        "Calm and never in a hurry, it waits patiently for just the right bite before reeling one in.",
+        "It won an NL MVP and a title in Atlanta, and represents Canada in international play.",
+        "Plays for the {team}, hit the first walk-off grand slam in World Series history, and it's the pink dozer that fishes with its tail."
+      ],
+      "why": "Freeman never panics and waits for his pitch, like Slowpoke, which dangles its tail in the water and waits for a bite."
+    },
+    {
+      "athleteId": "mlb-kyle-schwarber",
+      "pokemon": "Voltorb",
+      "clues": [
+        "It's more dangerous than it looks.",
+        "It isn't always reliable, but when it delivers, everyone remembers.",
+        "Round and harmless-looking, it's often called on first, and when it goes off the blast is enormous.",
+        "A burly lefty who returned from a major knee injury to help the Cubs win the 2016 World Series.",
+        "A leadoff bomber who once led the NL in homers for Philly; it's the first-form red-and-white ball that self-destructs."
+      ],
+      "why": "Schwarber trades contact for colossal power, and when he connects the result is an explosion, just like Voltorb."
+    },
+    {
+      "athleteId": "mlb-mike-trout",
+      "pokemon": "Gengar",
+      "clues": [
+        "It's admired by rivals almost as much as by its own side.",
+        "It's spent years quietly lurking near the very top of its field.",
+        "It's haunted the same neighborhood its whole career, and it's obsessed with the weather.",
+        "Drafted out of a New Jersey high school, it won three AL MVPs, though its kind usually evolves by trade.",
+        "Wears #{number} for the {team} as a three-time AL MVP, and it's the grinning purple shadow ghost."
+      ],
+      "why": "Trout is a complete, fully evolved superstar who haunts pitchers from every angle, much like Gengar lurking in the shadows."
+    },
+    {
+      "athleteId": "mlb-jacob-degrom",
+      "pokemon": "Rapidash",
+      "clues": [
+        "When it's at its peak, there's simply nothing else like it.",
+        "It took a less traditional route to the top than most.",
+        "It moves at breathtaking speed with ease, and its long, flowing mane drew as much notice as its pace.",
+        "A Fire-type thoroughbred that won back-to-back NL Cy Youngs with the Mets in 2018 and 2019.",
+        "Wears #{number} for the {team} as a long-haired former Mets ace, and it's the galloping horse with a mane of fire."
+      ],
+      "why": "deGrom pairs searing velocity with an elegant delivery (and once famous flowing hair), like Rapidash, the blazing horse with a fiery mane."
+    },
+    {
+      "athleteId": "mlb-josh-hader",
+      "pokemon": "Farfetch'd",
+      "clues": [
+        "It has a look and style all its own.",
+        "It shows up late, but it's often the one that decides the outcome.",
+        "Rare and a little odd, it never goes anywhere without its trusty weapon and strikes from odd angles.",
+        "A multi-time NL Reliever of the Year who rose to fame in Milwaukee.",
+        "Wears #{number} for the {team} as a lefty closer, and it's the wild duck that carries a leek everywhere."
+      ],
+      "why": "Hader is crafty and unorthodox with a funky slinging delivery, like Farfetch'd, the odd duck that fights with a leek."
+    }
+  ]
+}
