@@ -78,7 +78,12 @@ function enterRoom() {
     if (!p && wasIn && room?.phase !== 'closed') { leave('The host removed you from this game.'); return; }
     renderStatus();
   });
-  rooms.watchPlayers(code, (list) => { players = list; renderStatus(); if (room?.phase === 'reveal' || room?.phase === 'final') render(true); });
+  rooms.watchPlayers(code, (list) => {
+    players = list;
+    renderStatus();
+    if (room?.phase === 'lobby') render(); // keep the "players joined" count current
+    else if (room?.phase === 'reveal' || room?.phase === 'final') render(true);
+  });
 }
 
 function leave(msg) {
