@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "modimatch-dev", "runtimeExecutable": "node", "runtimeArgs": ["tools/serve.mjs", "--port", "5317"], "port": 5317 }
+    { "name": "dualthreat-dev", "runtimeExecutable": "node", "runtimeArgs": ["tools/serve.mjs", "--port", "5317"], "port": 5317 }
   ]
 }

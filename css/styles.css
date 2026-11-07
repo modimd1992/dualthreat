@@ -1,4 +1,4 @@
-/* ModiMatch: mobile-first styles. Sister look to ModiDex (same navy, fonts and shapes),
+/* Dual Threat: mobile-first styles. Sister look to ModiDex (same navy, fonts and shapes),
    with its own pink + cyan accent. Colors live in :root so the look is easy to change. */
 :root {
   --bg: #0b1020;
@@ -8,7 +8,7 @@
   --line: #2a376a;
   --text: #eef2ff;
   --muted: #9aa6cf;
-  --accent: #ff5ca8;      /* ModiMatch pink */
+  --accent: #ff5ca8;      /* Dual Threat pink */
   --accent-2: #22d3ee;    /* cyan, shared with ModiDex */
   --lime: #c6ff3d;        /* ModiDex lime, used sparingly */
   --hit: #22c55e;

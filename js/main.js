@@ -151,7 +151,7 @@ function finishDaily(mode, g) {
   g.grid = gridOf(g);
   saveDaily(today, mode.id, g);
   recordResult(mode.id, today, g.score, g.grid);
-  document.dispatchEvent(new CustomEvent('modimatch:complete', { detail: { modeId: mode.id, date: today, score: g.score, grid: g.grid } }));
+  document.dispatchEvent(new CustomEvent('dualthreat:complete', { detail: { modeId: mode.id, date: today, score: g.score, grid: g.grid } }));
   render();
 }
 

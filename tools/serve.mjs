@@ -44,6 +44,6 @@ createServer(async (req, res) => {
   res.writeHead(200, { 'content-type': TYPES[extname(file)] || 'application/octet-stream', 'cache-control': 'no-cache' });
   res.end(await readFile(file));
 }).listen(PORT, () => {
-  console.log(`ModiMatch running at http://localhost:${PORT}`);
+  console.log(`Dual Threat running at http://localhost:${PORT}`);
   console.log(`ModiDex data from ${MODIDEX}/data/athletes.json (falls back to the live site if missing)`);
 });

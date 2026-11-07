@@ -1,5 +1,5 @@
 {
-  "_readme": "ModiMatch clue sets. One entry per athlete, linked by ModiDex athlete id. 'pokemon' must match that athlete's ModiDex comp (a guard: if ModiDex changes the comp, the set is skipped until you update it). 4-5 clues, vague to specific, each describing BOTH. Tokens filled from live ModiDex data: {sport} {team} {position} {number} {division}. Add a new set with: node tools/new-clue.mjs <athlete name>. Check with: node tools/validate.mjs",
+  "_readme": "Dual Threat clue sets. One entry per athlete, linked by ModiDex athlete id. 'pokemon' must match that athlete's ModiDex comp (a guard: if ModiDex changes the comp, the set is skipped until you update it). 4-5 clues, vague to specific, each describing BOTH. Tokens filled from live ModiDex data: {sport} {team} {position} {number} {division}. Add a new set with: node tools/new-clue.mjs <athlete name>. Check with: node tools/validate.mjs",
   "sets": [
     {
       "athleteId": "nfl-patrick-mahomes",

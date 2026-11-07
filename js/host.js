@@ -30,12 +30,12 @@ const answersFor = (qi) => players.map((p) => p.answers?.[qi]).filter(Boolean);
 
 // ---------- setup ----------
 function renderSetup() {
-  const saved = JSON.parse(localStorage.getItem('modimatch:hostPrefs') || '{}');
+  const saved = JSON.parse(localStorage.getItem('dualthreat:hostPrefs') || '{}');
   const opt = (name, list, cur) => list.map(([v, label]) =>
     `<label class="chip-opt"><input type="radio" name="${name}" value="${v}" ${String(cur) === String(v) ? 'checked' : ''}><span>${label}</span></label>`).join('');
   el.innerHTML = `
     <div class="host-setup">
-      <div class="setup-brand"><img src="assets/icon.svg" width="56" height="56" alt=""><h1>Modi<span>Match</span> <small>Host Mode</small></h1></div>
+      <div class="setup-brand"><img src="assets/icon.svg" width="56" height="56" alt=""><h1>Dual <span>Threat</span> <small>Host Mode</small></h1></div>
       <p class="muted">Share this window on your stream. Viewers answer on their phones with a room code, and the leaderboard updates live.</p>
       ${isLocal() ? `<p class="local-note">🧪 Local test mode: rooms only work between tabs of this browser. Open <b>${esc(joinUrl())}</b> in other tabs to play along.</p>` : ''}
       ${!isLocal() && !cloudEnabled() ? `<p class="local-note">Firebase isn't set up, so only local test mode works. Add <b>?local</b> to the address.</p>` : ''}
@@ -52,7 +52,7 @@ function renderSetup() {
     e.preventDefault();
     const f = new FormData(e.target);
     const prefs = { mode: f.get('mode'), count: Number(f.get('count')), secs: Number(f.get('secs')) };
-    localStorage.setItem('modimatch:hostPrefs', JSON.stringify(prefs));
+    localStorage.setItem('dualthreat:hostPrefs', JSON.stringify(prefs));
     const pool = poolFor(data.questions, modeById(prefs.mode));
     // Random order, never the same Pokémon twice in one game.
     const picked = [];
@@ -66,7 +66,7 @@ function renderSetup() {
         mode: prefs.mode, ids: picked.map((q) => q.id), q: 0, clue: 1, phase: 'lobby',
         auto: prefs.secs > 0, clueSeconds: prefs.secs || 15, clueAt: Date.now(),
       });
-      sessionStorage.setItem('modimatch:hostRoom', code);
+      sessionStorage.setItem('dualthreat:hostRoom', code);
       enterRoom();
     } catch (err) {
       console.warn(err);
@@ -82,7 +82,7 @@ function enterRoom() {
   history.replaceState(null, '', `${location.pathname}${location.search}#${code}`);
   rooms.watchRoom(code, (r) => {
     room = r;
-    if (!r || r.phase === 'closed') { sessionStorage.removeItem('modimatch:hostRoom'); location.hash = ''; renderSetup(); return; }
+    if (!r || r.phase === 'closed') { sessionStorage.removeItem('dualthreat:hostRoom'); location.hash = ''; renderSetup(); return; }
     render();
   });
   rooms.watchPlayers(code, (list) => { players = list; render(); });
@@ -257,7 +257,7 @@ document.addEventListener('keydown', (e) => {
 async function start() {
   try { data = await loadData(); } catch { el.innerHTML = `<p class="loading">Couldn't load athlete data from ModiDex.</p>`; return; }
   // Refreshing the host page goes back into the same room.
-  const again = location.hash.slice(1) || sessionStorage.getItem('modimatch:hostRoom');
+  const again = location.hash.slice(1) || sessionStorage.getItem('dualthreat:hostRoom');
   if (again && /^[A-Z]{4}$/.test(again)) {
     try {
       const r = await rooms.getRoom(again);

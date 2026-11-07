@@ -82,11 +82,11 @@ function firebaseRoom() {
 
 // ---------- local test (between tabs of one browser) ----------
 function localRoom() {
-  const KEY = (code) => `modimatch:localroom:${code}`;
-  const chan = 'BroadcastChannel' in window ? new BroadcastChannel('modimatch-local') : null;
+  const KEY = (code) => `dualthreat:localroom:${code}`;
+  const chan = 'BroadcastChannel' in window ? new BroadcastChannel('dualthreat-local') : null;
   const subs = new Set();
-  let me = sessionStorage.getItem('modimatch:localUid');
-  if (!me) { me = `tab-${Math.random().toString(36).slice(2, 8)}`; sessionStorage.setItem('modimatch:localUid', me); }
+  let me = sessionStorage.getItem('dualthreat:localUid');
+  if (!me) { me = `tab-${Math.random().toString(36).slice(2, 8)}`; sessionStorage.setItem('dualthreat:localUid', me); }
   const read = (code) => { try { return JSON.parse(localStorage.getItem(KEY(code))); } catch { return null; } };
   const ping = () => subs.forEach((fn) => fn());
   const write = (code, v) => {

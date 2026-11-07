@@ -21,13 +21,13 @@ let ctrl = null;        // mounted question
 let mountedQ = null;    // question index that's mounted
 const states = {};      // my per-question state, by question index
 
-const saveKey = () => `modimatch:join:${code}`;
+const saveKey = () => `dualthreat:join:${code}`;
 const saveLocal = () => sessionStorage.setItem(saveKey(), JSON.stringify({ states }));
 
 function renderJoin(msg = '') {
   const params = new URLSearchParams(location.search);
   const preCode = (params.get('code') || location.hash.slice(1) || '').toUpperCase().slice(0, 4);
-  const lastName = localStorage.getItem('modimatch:joinName') || myHandle() || '';
+  const lastName = localStorage.getItem('dualthreat:joinName') || myHandle() || '';
   app.innerHTML = `
     <section class="panel join-panel">
       <p class="eyebrow">Playing along with a stream?</p>
@@ -53,7 +53,7 @@ function renderJoin(msg = '') {
     try {
       const r = await rooms.getRoom(c);
       if (!r || r.phase === 'closed') { renderJoin(`No game with code ${c}. Check the code on stream.`); return; }
-      localStorage.setItem('modimatch:joinName', name);
+      localStorage.setItem('dualthreat:joinName', name);
       code = c;
       const uid = await rooms.uid();
       if (r.banned?.includes(uid)) { renderJoin('The host removed you from this game.'); return; }
@@ -70,7 +70,7 @@ function renderJoin(msg = '') {
 function enterRoom() {
   try { Object.assign(states, JSON.parse(sessionStorage.getItem(saveKey()))?.states || {}); } catch { /* none */ }
   history.replaceState(null, '', `${location.pathname}${location.search}#${code}`);
-  sessionStorage.setItem('modimatch:joinRoom', code);
+  sessionStorage.setItem('dualthreat:joinRoom', code);
   rooms.watchRoom(code, (r) => { room = r; render(); });
   rooms.watchMe(code, (p) => {
     const wasIn = !!me;
@@ -83,7 +83,7 @@ function enterRoom() {
 
 function leave(msg) {
   ctrl?.destroy(); ctrl = null; mountedQ = null;
-  sessionStorage.removeItem('modimatch:joinRoom');
+  sessionStorage.removeItem('dualthreat:joinRoom');
   code = null; room = null; me = null;
   statusEl.textContent = '';
   history.replaceState(null, '', location.pathname + location.search);
@@ -175,8 +175,8 @@ async function start() {
   try { data = await loadData(); } catch { app.innerHTML = `<p class="loading">Couldn't load the game data. Check your connection.</p>`; return; }
   if (!isLocal()) initCloud();
   // Rejoin after a refresh.
-  const again = location.hash.slice(1).toUpperCase() || sessionStorage.getItem('modimatch:joinRoom');
-  if (again && /^[A-Z]{4}$/.test(again) && sessionStorage.getItem('modimatch:joinRoom') === again) {
+  const again = location.hash.slice(1).toUpperCase() || sessionStorage.getItem('dualthreat:joinRoom');
+  if (again && /^[A-Z]{4}$/.test(again) && sessionStorage.getItem('dualthreat:joinRoom') === again) {
     try {
       const r = await rooms.getRoom(again);
       if (r && r.phase !== 'closed') { code = again; enterRoom(); return; }

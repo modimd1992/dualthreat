@@ -1,11 +1,11 @@
 // Game-wide settings. Most things you'd want to tweak live here.
 
 export const GAME = {
-  name: 'ModiMatch',
+  name: 'Dual Threat',
   tagline: 'Guess the athlete and their Gen 1 comp',
-  hashtag: '#ModiMatch',
+  hashtag: '#DualThreat',
   // The live address, used in share text. Change it when the domain is set up.
-  siteUrl: 'playmodimatch.com',
+  siteUrl: 'playdualthreat.com',
   // The sister site, linked in the header menu and footer.
   sisterUrl: 'https://playmodidex.com',
   sisterName: 'ModiDex',
@@ -16,7 +16,7 @@ export const GAME = {
   // New daily contests at midnight in this time zone (same as ModiDex).
   timeZone: 'America/New_York',
   questionsPerDay: 10,
-  storagePrefix: 'modimatch:v1',
+  storagePrefix: 'dualthreat:v1',
 };
 
 // Where the athlete data comes from. ModiDex owns it; this site only reads it.

@@ -1,8 +1,8 @@
 {
-  "name": "modimatch",
+  "name": "dualthreat",
   "version": "1.0.0",
   "private": true,
-  "description": "ModiMatch: guess the athlete and their Gen 1 comp. Companion to ModiDex.",
+  "description": "Dual Threat: guess the athlete and their Gen 1 comp. Companion to ModiDex.",
   "type": "module",
   "scripts": {
     "dev": "node tools/serve.mjs",

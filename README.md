@@ -1,4 +1,4 @@
-# ModiMatch
+# Dual Threat
 
 **A daily sports trivia game, and the sister site of [ModiDex](https://playmodidex.com).** Each question is one athlete and their Gen 1 Pokémon comp from ModiDex. Clues describe both at once, from vague to obvious, and players guess **both**.
 
@@ -23,15 +23,15 @@ A new clue appears every 10 seconds, or when you tap **Next clue**. After the la
 
 ## How it shares data and sign-in with ModiDex
 
-**Data: read live from ModiDex, nothing copied.** ModiMatch reads `https://playmodidex.com/data/athletes.json` in the browser (GitHub Pages allows other sites to read it). Names, teams, numbers, positions and **comps** all come from there, so a comp written once in ModiDex shows up in both games. ModiMatch only keeps its own **clue file**, [`data/clues.json`](data/clues.json), linked to each athlete by their ModiDex `id`.
+**Data: read live from ModiDex, nothing copied.** Dual Threat reads `https://playmodidex.com/data/athletes.json` in the browser (GitHub Pages allows other sites to read it). Names, teams, numbers, positions and **comps** all come from there, so a comp written once in ModiDex shows up in both games. Dual Threat only keeps its own **clue file**, [`data/clues.json`](data/clues.json), linked to each athlete by their ModiDex `id`.
 
 - If ModiDex changes an athlete's comp, that clue set is skipped (the clues would be about the wrong Pokémon) until you update it. `node tools/validate.mjs` tells you which ones.
 - Clues use **tokens** like `{team}` and `{number}`, filled from ModiDex's data, so trades and new jersey numbers never make a clue wrong.
 - If playmodidex.com can't be reached, the game uses the last copy the player's browser saw.
 
-**Sign-in: same Firebase project, same account.** ModiMatch uses ModiDex's Firebase config, so signing in with the same Google account or email gives the same account and the **same username** on both sites. A username picked on either site works on both. Browsers keep sign-ins separate per website, so players sign in once on each site.
+**Sign-in: same Firebase project, same account.** Dual Threat uses ModiDex's Firebase config, so signing in with the same Google account or email gives the same account and the **same username** on both sites. A username picked on either site works on both. Browsers keep sign-ins separate per website, so players sign in once on each site.
 
-**Rules:** both sites share one set of Firestore rules, kept in **ModiDex's** [`firestore.rules`](../Pokemon/firestore.rules). The ModiMatch section adds `matchDaily` (leaderboards) and `matchRooms` (Host Mode).
+**Rules:** both sites share one set of Firestore rules, kept in **ModiDex's** [`firestore.rules`](../Pokemon/firestore.rules). The Dual Threat section adds `matchDaily` (leaderboards) and `matchRooms` (Host Mode).
 
 ---
 
@@ -39,14 +39,14 @@ A new clue appears every 10 seconds, or when you tap **Next clue**. After the la
 
 1. **Publish the rules.** Copy ModiDex's `firestore.rules` into Firebase → Firestore → **Rules**, then click **Publish**. Until you do, the leaderboard says "couldn't load".
 2. **Turn on guest sign-in for Host Mode.** In Firebase → Authentication → **Sign-in method**, enable **Anonymous**. Viewers join without an account. It doesn't affect ModiDex.
-3. **Add the domain to Firebase.** Authentication → Settings → **Authorized domains**: add `playmodimatch.com` and `www.playmodimatch.com` (plus `modimd1992.github.io` if you use that address).
-4. **Create the repo and turn on Pages.** Create a GitHub repo (e.g. `modimatch`), push this folder, then Settings → Pages → Deploy from branch `main`, folder `/ (root)`.
-5. **Domain.** Buy the domain (e.g. `playmodimatch.com` at Porkbun, like ModiDex). Add four `A` records for `@` pointing to 185.199.108.153, 185.199.109.153, 185.199.110.153 and 185.199.111.153, plus a `www` CNAME to `modimd1992.github.io`. Then create a file named `CNAME` in this folder containing just `playmodimatch.com`, and push. If you pick a different name, also change `siteUrl` in `js/config.js` and the `og:` image addresses in `index.html`.
+3. **Add the domain to Firebase.** Authentication → Settings → **Authorized domains**: add `playdualthreat.com` and `www.playdualthreat.com` (plus `modimd1992.github.io` if you use that address).
+4. **Create the repo and turn on Pages.** Create a GitHub repo (e.g. `dualthreat`), push this folder, then Settings → Pages → Deploy from branch `main`, folder `/ (root)`.
+5. **Domain.** Buy the domain (e.g. `playdualthreat.com` at Porkbun, like ModiDex). Add four `A` records for `@` pointing to 185.199.108.153, 185.199.109.153, 185.199.110.153 and 185.199.111.153, plus a `www` CNAME to `modimd1992.github.io`. Then create a file named `CNAME` in this folder containing just `playdualthreat.com`, and push. If you pick a different name, also change `siteUrl` in `js/config.js` and the `og:` image addresses in `index.html`.
 
 ## Run it on your computer
 
 ```bash
-cd ~/ModiMatch
+cd ~/DualThreat
 node tools/serve.mjs
 ```
 
@@ -110,10 +110,10 @@ Other commands:
 
 ## Host Mode on a stream
 
-1. Open **https://playmodimatch.com/host** on the computer you stream from (also linked in the footer as 🎥 Host Mode).
+1. Open **https://playdualthreat.com/host** on the computer you stream from (also linked in the footer as 🎥 Host Mode).
 2. Pick the sport, number of questions, and clue timer (10/15/20 seconds, or Manual). Click **Create room**.
 3. Share that browser window in OBS (Window Capture) or your streaming tool. The lobby shows the join address and a big 4-letter code.
-4. Viewers go to **playmodimatch.com/join** on their phones and enter the code and a name. Names pop up in the lobby. Click ✕ on a name to remove (and block) that player.
+4. Viewers go to **playdualthreat.com/join** on their phones and enter the code and a name. Names pop up in the lobby. Click ✕ on a name to remove (and block) that player.
 5. Press **N** to start. Controls (also shown as buttons at the bottom):
 
 | Key | Does |
